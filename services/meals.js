@@ -11,7 +11,7 @@ const s3 = new S3Client({
   region: process.env.AWS_REGION,
 });
 
-const db = sql("meals.db");
+const db = sql("data.db");
 
 export const getMeals = async () => {
   await new Promise((resolve) =>
