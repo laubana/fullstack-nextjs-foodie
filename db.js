@@ -1,12 +1,12 @@
 const sql = require("better-sqlite3");
 const db = sql("data.db");
+require("dotenv").config();
 
 const dummyMeals = [
   {
     title: "Juicy Cheese Burger",
     slug: "juicy-cheese-burger",
-    image:
-      "https://yuhwan-ban-foodie.s3.us-west-2.amazonaws.com/images/static/burger.jpg",
+    image: `${process.env.AWS_URL}/images/static/burger.jpg`,
     summary:
       "A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.",
     instructions: `
@@ -28,8 +28,7 @@ const dummyMeals = [
   {
     title: "Spicy Curry",
     slug: "spicy-curry",
-    image:
-      "https://yuhwan-ban-foodie.s3.us-west-2.amazonaws.com/images/static/curry.jpg",
+    image: `${process.env.AWS_URL}/images/static/curry.jpg`,
     summary:
       "A rich and spicy curry, infused with exotic spices and creamy coconut milk.",
     instructions: `
@@ -54,8 +53,7 @@ const dummyMeals = [
   {
     title: "Homemade Dumplings",
     slug: "homemade-dumplings",
-    image:
-      "https://yuhwan-ban-foodie.s3.us-west-2.amazonaws.com/images/static/dumplings.jpg",
+    image: `${process.env.AWS_URL}/images/static/dumplings.jpg`,
     summary:
       "Tender dumplings filled with savory meat and vegetables, steamed to perfection.",
     instructions: `
@@ -77,8 +75,7 @@ const dummyMeals = [
   {
     title: "Classic Mac n Cheese",
     slug: "classic-mac-n-cheese",
-    image:
-      "https://yuhwan-ban-foodie.s3.us-west-2.amazonaws.com/images/static/macncheese.jpg",
+    image: `${process.env.AWS_URL}/images/static/macncheese.jpg`,
     summary:
       "Creamy and cheesy macaroni, a comforting classic that's always a crowd-pleaser.",
     instructions: `
@@ -103,8 +100,7 @@ const dummyMeals = [
   {
     title: "Authentic Pizza",
     slug: "authentic-pizza",
-    image:
-      "https://yuhwan-ban-foodie.s3.us-west-2.amazonaws.com/images/static/pizza.jpg",
+    image: `${process.env.AWS_URL}/images/static/pizza.jpg`,
     summary:
       "Hand-tossed pizza with a tangy tomato sauce, fresh toppings, and melted cheese.",
     instructions: `
@@ -126,8 +122,7 @@ const dummyMeals = [
   {
     title: "Wiener Schnitzel",
     slug: "wiener-schnitzel",
-    image:
-      "https://yuhwan-ban-foodie.s3.us-west-2.amazonaws.com/images/static/schnitzel.jpg",
+    image: `${process.env.AWS_URL}/images/static/schnitzel.jpg`,
     summary:
       "Crispy, golden-brown breaded veal cutlet, a classic Austrian dish.",
     instructions: `
@@ -149,20 +144,19 @@ const dummyMeals = [
   {
     title: "Fresh Tomato Salad",
     slug: "fresh-tomato-salad",
-    image:
-      "https://yuhwan-ban-foodie.s3.us-west-2.amazonaws.com/images/static/tomato-salad.jpg",
+    image: `${process.env.AWS_URL}/images/static/tomato-salad.jpg`,
     summary:
       "A light and refreshing salad with ripe tomatoes, fresh basil, and a tangy vinaigrette.",
     instructions: `
       1. Prepare the tomatoes:
         Slice fresh tomatoes and arrange them on a plate.
-    
+
       2. Add herbs and seasoning:
          Sprinkle chopped basil, salt, and pepper over the tomatoes.
-    
+
       3. Dress the salad:
          Drizzle with olive oil and balsamic vinegar.
-    
+
       4. Serve:
          Enjoy this simple, flavorful salad as a side dish or light meal.
     `,
