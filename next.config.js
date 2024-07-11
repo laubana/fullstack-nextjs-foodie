@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "yuhwan-ban-foodie.s3.us-west-2.amazonaws.com",
+        hostname: `${process.env.AWS_BUCKET_NAME}.${process.env.AWS_REGION}.amazonaws.com`,
       },
     ],
   },
