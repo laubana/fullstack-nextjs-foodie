@@ -6,7 +6,7 @@ const dummyMeals = [
   {
     title: "Juicy Cheese Burger",
     slug: "juicy-cheese-burger",
-    image: `${process.env.AWS_URL}/images/static/burger.jpg`,
+    image: `${process.env.AWS_URL}/foodie/images/static/burger.jpg`,
     summary:
       "A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.",
     instructions: `
@@ -28,7 +28,7 @@ const dummyMeals = [
   {
     title: "Spicy Curry",
     slug: "spicy-curry",
-    image: `${process.env.AWS_URL}/images/static/curry.jpg`,
+    image: `${process.env.AWS_URL}/foodie/images/static/curry.jpg`,
     summary:
       "A rich and spicy curry, infused with exotic spices and creamy coconut milk.",
     instructions: `
@@ -53,7 +53,7 @@ const dummyMeals = [
   {
     title: "Homemade Dumplings",
     slug: "homemade-dumplings",
-    image: `${process.env.AWS_URL}/images/static/dumplings.jpg`,
+    image: `${process.env.AWS_URL}/foodie/images/static/dumplings.jpg`,
     summary:
       "Tender dumplings filled with savory meat and vegetables, steamed to perfection.",
     instructions: `
@@ -75,7 +75,7 @@ const dummyMeals = [
   {
     title: "Classic Mac n Cheese",
     slug: "classic-mac-n-cheese",
-    image: `${process.env.AWS_URL}/images/static/macncheese.jpg`,
+    image: `${process.env.AWS_URL}/foodie/images/static/macncheese.jpg`,
     summary:
       "Creamy and cheesy macaroni, a comforting classic that's always a crowd-pleaser.",
     instructions: `
@@ -100,7 +100,7 @@ const dummyMeals = [
   {
     title: "Authentic Pizza",
     slug: "authentic-pizza",
-    image: `${process.env.AWS_URL}/images/static/pizza.jpg`,
+    image: `${process.env.AWS_URL}/foodie/images/static/pizza.jpg`,
     summary:
       "Hand-tossed pizza with a tangy tomato sauce, fresh toppings, and melted cheese.",
     instructions: `
@@ -122,7 +122,7 @@ const dummyMeals = [
   {
     title: "Wiener Schnitzel",
     slug: "wiener-schnitzel",
-    image: `${process.env.AWS_URL}/images/static/schnitzel.jpg`,
+    image: `${process.env.AWS_URL}/foodie/images/static/schnitzel.jpg`,
     summary:
       "Crispy, golden-brown breaded veal cutlet, a classic Austrian dish.",
     instructions: `
@@ -144,7 +144,7 @@ const dummyMeals = [
   {
     title: "Fresh Tomato Salad",
     slug: "fresh-tomato-salad",
-    image: `${process.env.AWS_URL}/images/static/tomato-salad.jpg`,
+    image: `${process.env.AWS_URL}/foodie/images/static/tomato-salad.jpg`,
     summary:
       "A light and refreshing salad with ripe tomatoes, fresh basil, and a tangy vinaigrette.",
     instructions: `

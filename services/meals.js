@@ -52,7 +52,7 @@ export const addMeal = async (meal) => {
 
   const params = {
     Bucket: process.env.AWS_BUCKET_NAME,
-    Key: `images/${filename}`,
+    Key: `foodie/images/${filename}`,
     Body: Buffer.from(bufferedImage),
     ContentType: meal.image.type,
   };
@@ -60,7 +60,7 @@ export const addMeal = async (meal) => {
   const command = new PutObjectCommand(params);
   await s3.send(command);
 
-  meal.image = `${process.env.AWS_URL}/images/${filename}`;
+  meal.image = `${process.env.AWS_URL}/foodie/images/${filename}`;
 
   db.prepare(
     `
