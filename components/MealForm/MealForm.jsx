@@ -24,6 +24,7 @@ export default () => {
 
           if (response) {
             setState(response);
+            setIsSubmitting(false);
           }
         } catch (error) {
           console.error(error);
