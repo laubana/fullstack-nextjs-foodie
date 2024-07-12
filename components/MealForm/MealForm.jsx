@@ -24,10 +24,11 @@ export default () => {
 
           if (response) {
             setState(response);
-            setIsSubmitting(false);
           }
         } catch (error) {
           console.error(error);
+        } finally {
+          setIsSubmitting(false);
         }
       }}
       // action={action}
