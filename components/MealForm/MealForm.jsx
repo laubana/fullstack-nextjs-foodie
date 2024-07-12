@@ -7,6 +7,7 @@ import ImageField from "@components/ImageField/ImageField";
 import { handleMeal } from "@services/forms";
 
 export default () => {
+  // TODO
   // 123
   // const [state, action] = useFormState(handleMeal, {
   //   status: "ready",
@@ -32,6 +33,7 @@ export default () => {
           setIsSubmitting(false);
         }
       }}
+      // TODO
       // 123
       // action={action}
       onSubmit={() => setIsSubmitting(true)}
@@ -64,6 +66,8 @@ export default () => {
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? <BeatLoader color="#FFFFFF" /> : "Share Meal"}
         </button>
+        {/* TODO */}
+        {/* 123 */}
         {/* <button type="submit" disabled={status.pending}>
           {status.pending ? <BeatLoader color="#F9572A" /> : "Share Meal"}
         </button> */}
