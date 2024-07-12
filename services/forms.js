@@ -18,6 +18,7 @@ export const handleMeal = async (formData) => {
     creator: formData.get("name"),
     creator_email: formData.get("email"),
   };
+
   if (
     isEmpty(meal.title) ||
     isEmpty(meal.summary) ||
