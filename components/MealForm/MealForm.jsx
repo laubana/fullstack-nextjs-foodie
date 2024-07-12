@@ -58,7 +58,7 @@ export default () => {
       {state.status === "error" && <p>{state.message}</p>}
       <p className={styles.actions}>
         <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? <BeatLoader color="#F9572A" /> : "Share Meal"}
+          {isSubmitting ? <BeatLoader color="#FFFFFF" /> : "Share Meal"}
         </button>
         {/* <button type="submit" disabled={status.pending}>
           {status.pending ? <BeatLoader color="#F9572A" /> : "Share Meal"}
