@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BeatLoader } from "react-spinners";
 import styles from "./MealForm.module.css";
 import ImageField from "@components/ImageField/ImageField";
-import { handleMeal } from "@services/forms";
+import { handleMeal } from "@services/actions";
 
 export default () => {
   // TODO
