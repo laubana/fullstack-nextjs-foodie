@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
-import MealForm from "@components/MealForm/MealForm";
+
+import MealForm from "@/components/MealForm/MealForm";
 
 export default () => {
   return (

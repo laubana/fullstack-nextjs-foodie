@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Suspense } from "react";
+
 import styles from "./page.module.css";
-import Loader from "@components/Loader/Loader";
-import MealGrid from "@components/MealGrid/MealGrid";
-import { getMeals } from "@services/meals";
+
+import Loader from "@/components/Loader/Loader";
+import MealGrid from "@/components/MealGrid/MealGrid";
+import { getMeals } from "@/services/meals";
 
 export const metadata = {
   title: "All Meals",

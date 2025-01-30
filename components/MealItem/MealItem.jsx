@@ -1,17 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import styles from "./MealItem.module.css";
 
-export default ({ title, slug, image, summary, creator }) => {
+export default ({ title, slug, imageUrl, summary, authorName }) => {
   return (
     <article className={styles.meal}>
       <header>
         <div className={styles.image}>
-          <Image src={image} alt={title} fill />
+          <Image src={imageUrl} alt={title} fill />
         </div>
         <div className={styles.headerText}>
           <h2>{title}</h2>
-          <p>by {creator}</p>
+          <p>by {authorName}</p>
         </div>
       </header>
       <div className={styles.content}>

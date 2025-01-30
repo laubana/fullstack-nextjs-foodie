@@ -1,43 +1,22 @@
 "use client";
 
-import { useState } from "react";
 import { BeatLoader } from "react-spinners";
+import { useFormState, useFormStatus } from "react-dom";
+
 import styles from "./MealForm.module.css";
-import ImageField from "@components/ImageField/ImageField";
-import { handleMeal } from "@services/actions";
+
+import ImageField from "@/components/ImageField/ImageField";
+import { handleMeal } from "@/services/actions";
 
 export default () => {
-  // TODO
-  // 123
-  // const [state, action] = useFormState(handleMeal, {
-  //   status: "ready",
-  //   message: null,
-  // });
-  // const status = useFormStatus();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [state, setState] = useState({ status: "ready", message: null });
+  const [state, action] = useFormState(handleMeal, {
+    status: "ready",
+    message: null,
+  });
+  const status = useFormStatus();
 
   return (
-    <form
-      className={styles.form}
-      action={async (formData) => {
-        try {
-          const response = await handleMeal(formData);
-
-          if (response) {
-            setState(response);
-          }
-        } catch (error) {
-          console.error(error);
-        } finally {
-          setIsSubmitting(false);
-        }
-      }}
-      // TODO
-      // 123
-      // action={action}
-      onSubmit={() => setIsSubmitting(true)}
-    >
+    <form className={styles.form} action={action}>
       <div className={styles.row}>
         <p>
           <label htmlFor="name">Your name</label>
@@ -63,14 +42,9 @@ export default () => {
       <ImageField label="Your image" name="image" />
       {state.status === "error" && <p>{state.message}</p>}
       <p className={styles.actions}>
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? <BeatLoader color="#FFFFFF" /> : "Share Meal"}
-        </button>
-        {/* TODO */}
-        {/* 123 */}
-        {/* <button type="submit" disabled={status.pending}>
+        <button type="submit" disabled={status.pending}>
           {status.pending ? <BeatLoader color="#F9572A" /> : "Share Meal"}
-        </button> */}
+        </button>
       </p>
     </form>
   );

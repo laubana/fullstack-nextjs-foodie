@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import styles from "./Header.module.css";
-import logoImage from "@assets/logo.png";
-import HeaderBackground from "@components/HeaderBackground/HeaderBackground";
-import Navigation from "@components/Navigation/Navigation";
+
+import logoImage from "@/assets/logo.png";
+import HeaderBackground from "@/components/HeaderBackground/HeaderBackground";
+import Navigation from "@/components/Navigation/Navigation";
 
 const navigations = [
   {

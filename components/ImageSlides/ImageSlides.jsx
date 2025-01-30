@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
 import styles from "./ImageSlides.module.css";
+
 import burgerImg from "@/assets/burger.jpg";
 import curryImg from "@/assets/curry.jpg";
 import dumplingsImg from "@/assets/dumplings.jpg";

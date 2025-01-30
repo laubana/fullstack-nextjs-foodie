@@ -1,6 +1,8 @@
 import Link from "next/link";
+
 import styles from "./page.module.css";
-import ImageSlides from "@components/ImageSlides/ImageSlides";
+
+import ImageSlides from "@/components/ImageSlides/ImageSlides";
 
 export default () => {
   return (

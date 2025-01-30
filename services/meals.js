@@ -1,9 +1,11 @@
 "use server";
 
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
-import sql from "better-sqlite3";
 import slugify from "slugify";
 import xss from "xss";
+
+import { connect } from "@/configs/db";
+import Meal from "@/models/meal";
 
 const s3 = new S3Client({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
@@ -11,42 +13,41 @@ const s3 = new S3Client({
   region: process.env.AWS_REGION,
 });
 
-const db = sql("data.db");
-
 export const getMeals = async () => {
-  await new Promise((resolve) =>
-    setTimeout(() => {
-      resolve();
-    }, 2000)
-  );
+  await connect();
 
-  //   throw new Error("Error!");
+  const existingMeals = await Meal.find().lean();
 
-  return db.prepare("SELECT * FROM meals").all();
+  return existingMeals;
 };
 
 export const getMeal = async (slug) => {
-  await new Promise((resolve) =>
-    setTimeout(() => {
-      resolve();
-    }, 2000)
-  );
+  await connect();
 
-  return db.prepare("SELECT * FROM meals WHERE slug = ?").get(slug);
+  const existingMeal = await Meal.findOne({ slug }).lean();
+
+  return existingMeal;
 };
 
 export const addMeal = async (meal) => {
-  await new Promise((resolve) =>
-    setTimeout(() => {
-      resolve();
-    }, 2000)
-  );
+  await connect();
 
   meal.slug = slugify(meal.title, { lower: true });
+
+  const existingMeal = await Meal.findOne({ slug: meal.slug }).lean();
+
+  if (existingMeal) {
+    return null;
+  }
+
   meal.instructions = xss(meal.instructions);
 
   const extension = meal.image.name.split(".").pop();
   const filename = `${meal.slug}.${extension}`;
+
+  meal.imageUrl = `${process.env.AWS_URL}/foodie/images/${filename}`;
+
+  const newMeal = await Meal.create(meal);
 
   const bufferedImage = await meal.image.arrayBuffer();
 
@@ -60,14 +61,5 @@ export const addMeal = async (meal) => {
   const command = new PutObjectCommand(params);
   await s3.send(command);
 
-  meal.image = `${process.env.AWS_URL}/foodie/images/${filename}`;
-
-  db.prepare(
-    `
-    INSERT INTO meals
-      (title, summary, instructions, creator, creator_email, image, slug)
-    VALUES
-      (@title, @summary, @instructions, @creator, @creator_email, @image, @slug)
-    `
-  ).run(meal);
+  return newMeal;
 };
