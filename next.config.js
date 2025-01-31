@@ -3,8 +3,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: `${process.env.AWS_BUCKET_NAME}`,
+        protocol: "https",
+        hostname: `s3.${process.env.AWS_REGION}.amazonaws.com`,
       },
     ],
   },
