@@ -3,11 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "db": "node db.mjs"
+    "dev": "next dev"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.613.0",

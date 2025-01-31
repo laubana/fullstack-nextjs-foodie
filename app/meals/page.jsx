@@ -12,13 +12,11 @@ export const metadata = {
   description: "Browse the delicious meals shared by our vibrant community.",
 };
 
-const Meals = async () => {
+export const revalidate = 60;
+
+export default async () => {
   const meals = await getMeals();
 
-  return <MealGrid meals={meals} />;
-};
-
-export default () => {
   return (
     <>
       <header className={styles.header}>
@@ -35,7 +33,7 @@ export default () => {
       </header>
       <main className={styles.main}>
         <Suspense fallback={<Loader />}>
-          <Meals />
+          <MealGrid meals={meals} />
         </Suspense>
       </main>
     </>

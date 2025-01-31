@@ -1,5 +1,3 @@
-"use server";
-
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import slugify from "slugify";
 import xss from "xss";

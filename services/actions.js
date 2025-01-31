@@ -34,7 +34,7 @@ export const handleMeal = async (_, formData) => {
   const newMeal = await addMeal(meal);
 
   if (!newMeal) {
-    return { status: "error", message: "Server Error" };
+    return { status: "error", message: "Error" };
   }
 
   revalidatePath("/meals", "page");
