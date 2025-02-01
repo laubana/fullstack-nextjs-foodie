@@ -14,6 +14,8 @@ In the project directory, you can run:
 
 ## Takeaways
 
+### AWS S3
+
 ### app/[]
 
 ### metadata
