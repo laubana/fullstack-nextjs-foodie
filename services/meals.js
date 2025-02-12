@@ -1,12 +1,12 @@
 import slugify from "slugify";
 import xss from "xss";
 
-import { connect } from "@/configs/db";
-import Meal from "@/models/meal";
+import dbConfig from "@/configs/dbConfig";
+import Meal from "@/models/Meal";
 import { uploadImage } from "@/helpers/s3";
 
 export const getMeals = async () => {
-  await connect();
+  await dbConfig.connect();
 
   const existingMeals = await Meal.find().lean();
 
@@ -14,7 +14,7 @@ export const getMeals = async () => {
 };
 
 export const getMeal = async (slug) => {
-  await connect();
+  await dbConfig.connect();
 
   const existingMeal = await Meal.findOne({ slug }).lean();
 
@@ -22,7 +22,7 @@ export const getMeal = async (slug) => {
 };
 
 export const addMeal = async (meal) => {
-  await connect();
+  await dbConfig.connect();
 
   meal.slug = slugify(meal.title, { lower: true });
 

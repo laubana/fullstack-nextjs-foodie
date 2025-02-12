@@ -2,10 +2,6 @@ import Image from "next/image";
 
 import styles from "./page.module.css";
 
-import communityIcon from "@/assets/icons/community.png";
-import eventsIcon from "@/assets/icons/events.png";
-import mealIcon from "@/assets/icons/meal.png";
-
 export default () => {
   return (
     <>
@@ -19,17 +15,24 @@ export default () => {
         <h2>Community Perks</h2>
         <ul className={styles.perks}>
           <li>
-            <Image src={mealIcon} alt="A delicious meal" />
+            <Image src="/images/meal.png" width={800} height={800} alt="Meal" />
             <p>Share & discover recipes</p>
           </li>
           <li>
-            <Image src={communityIcon} alt="A crowd of people, cooking" />
+            <Image
+              src="/images/community.png"
+              width={800}
+              height={800}
+              alt="Cooking People"
+            />
             <p>Find new friends & like-minded people</p>
           </li>
           <li>
             <Image
-              src={eventsIcon}
-              alt="A crowd of people at a cooking event"
+              src="/images/events.png"
+              width={800}
+              height={800}
+              alt="Cooking People"
             />
             <p>Participate in exclusive events</p>
           </li>

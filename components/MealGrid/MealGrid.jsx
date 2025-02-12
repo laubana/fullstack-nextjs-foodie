@@ -1,6 +1,6 @@
 import styles from "./MealGrid.module.css";
 
-import MealItem from "@components/MealItem/MealItem";
+import MealItem from "@/components/MealItem/MealItem";
 
 export default ({ meals }) => {
   return (

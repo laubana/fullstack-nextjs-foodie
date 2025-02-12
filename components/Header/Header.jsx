@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import styles from "./Header.module.css";
 
-import logoImage from "@/assets/logo.png";
 import HeaderBackground from "@/components/HeaderBackground/HeaderBackground";
 import Navigation from "@/components/Navigation/Navigation";
 
@@ -24,7 +23,13 @@ export default () => {
       <HeaderBackground />
       <header className={styles.header}>
         <Link className={styles.logo} href="/">
-          <Image src={logoImage} alt="logo" priority />
+          <Image
+            src="/images/logo.png"
+            width={1024}
+            height={1024}
+            alt="logo"
+            priority
+          />
           <span>NextLevel Food</span>
         </Link>
         <nav className={styles.nav}>
